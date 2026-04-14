@@ -1,0 +1,246 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+/* Header */
+header {
+    background-color: #f0f7ff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+}
+
+.logo img {
+    width: auto; 
+    height: auto;
+    display: block;
+}
+
+/* Header-navigation */
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+.nav-links li {
+    position: relative;
+    padding: 10px 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* Header-navigation-dropdown */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: ghostwhite;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 10px 0;
+    min-width: 150px;
+    z-index: 100;
+}
+
+.dropdown-menu li {
+    padding: 10px 20px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Hero Section */
+.hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('background.webp');
+    background-size: cover;       
+    background-position: center;  
+    height: 350px;                
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;                 
+}
+
+.hero-section h1 {
+    font-size: 3rem;              
+    margin: 0;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8); 
+    line-height: 1.2;
+}
+
+/* Content Section */
+.main-content {
+    text-align: center;
+    /*padding: 40px 20px;   */ 
+}     
+
+.info-block {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.center-list {
+    display: inline-block; 
+    text-align: left;
+    padding: 0;  
+    list-style-type: none;    
+}
+
+.center-list li {
+    margin-bottom: 5px;
+}
+
+.no-bullets {
+    display: inline-block; 
+    text-align: center;
+    padding: 0;  
+    list-style-type: none;    
+}
+
+.no-bullets li {
+    margin-bottom: 5px;
+}
+
+.page-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.page-title {
+    text-align: left;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.title-line {
+    border: 0;
+    height: 2px;
+    background: #333;
+    margin-bottom: 30px;
+}
+
+.content-flex {
+    display: flex;
+    align-items: flex-start; 
+    gap: 40px; 
+}
+
+.content-image {
+    flex: 1; 
+}
+
+.content-text {
+    flex: 1; 
+    line-height: 1.5;
+    font-size: 1.1rem;
+}
+
+.content-text ul {
+    margin-top: 15px;
+}
+
+.content-text li {
+    margin-bottom: 10px;
+}
+
+/* Mobile page */
+@media (max-width: 768px) {
+    .content-flex {
+        flex-direction: column;
+    }
+}
+
+.strategies-container {
+    padding-top: 60px; 
+    margin-top: 20px;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.strategy-table {
+    width: auto;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+}
+
+.strategy-table th, .strategy-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.strategy-table th {
+    background-color: #333;
+    color: white;
+}
+
+.strategy-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.strategy-details {
+    display: flex;
+    gap: auto;
+    flex-wrap: wrap;
+}
+
+.strategy-card {
+    flex: 1;
+    min-width: 280px;
+    padding: 20px;
+    background: #fff;
+    border-top: 4px solid #333; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.strategy-card h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+/* Footer Section */
+footer {
+    padding: 20px 50px;
+    background-color: #f0f7ff;
+    border-top: 1px solid #ddd;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-end;         
+}
+
+.footer-text p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.footer-logo img {
+    height: 50px;     
+    width: auto;
+    display: block;
+}
+
+.footer-logo img:hover {
+    opacity: 0.8;
+}
