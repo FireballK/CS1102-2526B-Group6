@@ -27,7 +27,7 @@
             <li class="dropdown">
                 <a href="risktolerance.html">Risk Tolerance</a>
                 <ul class="dropdown-menu">
-                    <li><a href="risktolerance.html#tool">Risk Profiling Tool</a></li>
+                    <li><a href="tool.html">Risk Profiling Tool</a></li>
                 </ul>
             </li>
             <li class="dropdown">
@@ -100,51 +100,135 @@
     </div>
     </table>
 
-    <div class="strategy-details">
-        <div class="strategy-card">
-            <div class="main-content">
-                <h2>Conservative Strategy</h2>
-            </div>
-            <p><strong>Good for:</strong> Retired people, short-term goals (1–3 years).</p>
-            <ul>
-                <li>Focus on fixed income (bonds).</li>
-                <li>Small losses during market crashes.</li>
-                <li>Example: Wealthfront "Conservative Risk".</li>
-            </ul>
+    <div class="strategy-details-container">
+    
+    <div class="strategy-feature-block conservative">
+        <div class="feature-tag">RETIREMENT & SHORT-TERM</div>
+        <div class="strategy-header">
+            <h3>Conservative Strategy</h3>
+            <span class="ref-source">(Investopedia, 2023a)</span>
         </div>
-
-        <div class="strategy-card">
-            <div class="main-content">
-                <h2>Moderate Strategy</h2>
+        
+        <div class="strategy-content">
+            <div class="content-left">
+                <p><strong>Ideal for:</strong> Retired individuals or those with 1–3 year goals who do not want to take risk.</p>
+                <div class="example-tag">Examples: Wealthfront "Conservative Risk" / Betterment "Safety Net"</div>
             </div>
-            <p><strong>Good for:</strong> Mid-career professionals (5–10 years goals).</p>
-            <ul>
-                <li>Mix of stocks (growth) and bonds (stability).</li>
-                <li>Protection from inflation.</li>
-                <li>Typical allocation: 50% stocks / 50% bonds.</li>
-            </ul>
+            <div class="content-right">
+                <h4>Key Features</h4>
+                <ul>
+                    <li>Pay attention to fixed income, like government and corporate bonds <span class="ref-inline">(Wealthfront, 2024)</span>.</li>
+                    <li>Minimal impact during market crashes.</li>
+                    <li>Less expected returns, but more stable.</li>
+                </ul>
+            </div>
         </div>
+    </div>
 
-        <div class="strategy-card">
-            <div class="main-content">
-                <h2>Aggressive Strategy</h2>
+    <div class="strategy-feature-block moderate highlighted">
+        <div class="feature-tag">MOST COMMON CHOICE</div>
+        <div class="strategy-header">
+            <h3>Moderate Strategy</h3>
+            <span class="ref-source">(TD Wealth Investing, n.d.)</span>
+        </div>
+        
+        <div class="strategy-content">
+            <div class="content-left">
+                <p><strong>Ideal for:</strong> Professionals in the middle of their careers who want to reach their goals in the next five to ten years.</p>
+                <div class="allocation-badge">Typical Allocation: 50% Stocks / 50% Bonds</div>
             </div>
-            <p><strong>Good for:</strong> Young investors, long-term goals (10+ years).</p>
-            <ul>
-                <li>High allocation in domestic and foreign stocks.</li>
-                <li>Highest expected returns, but higher risk.</li>
-                <li>Example: Betterment "Aggressive".</li>
-            </ul>
+            <div class="content-right">
+                <h4>Key Features</h4>
+                <ul>
+                    <li>Balanced mix of stocks for growth and bonds for stability <span class="ref-inline">(Betterment, 2024)</span>.</li>
+                    <li>A little bit of protection from inflation.</li>
+                    <li>Still able to bounce back from small drops.</li>
+                    <li>A typical robo-advisor allocation is 50% stocks from around the world and 50% bonds <span class="ref-inline">(Wealthfront, 2024)</span>.</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="strategy-feature-block aggressive">
+        <div class="feature-tag">LONG-TERM GROWTH</div>
+        <div class="strategy-header">
+            <h3>Aggressive Strategy</h3>
+            <span class="ref-source">(Investopedia, 2023c)</span>
+        </div>
+        
+        <div class="strategy-content">
+            <div class="content-left">
+                <p><strong>Ideal for:</strong> Young investors or those with 10+ year goals who can handle more risk.</p>
+                <div class="warning-box">Note: High reward potential, but 30–50% loss possible in bear markets.</div>
+            </div>
+            <div class="content-right">
+                <h4>Key Features</h4>
+                <ul>
+                    <li>Invest many money to domestic and international stocks <span class="ref-inline">(Investopedia, 2023c)</span>.</li>
+                    <li>Includes small-caps, real estate, and emerging markets.</li>
+                    <li>Maximum expected returns for long-term compounding.</li>
+                </ul>
+            </div>
         </div>
     </div>
     </div>
 
+    <div id="tool" class="process-section">
+        <div class="page-container">
+            <h2 class="page-title">How a Robo-Advisor Works</h2>
+            <hr class="title-line">
+
+            <div class="process-container">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Risk Profiling</h3>
+                    <p>The client answers a short questionnaire. (e.g., "If your portfolio lost 15% in one month, would you sell, hold, or buy more?")</p>
+                    <span class="source">(E*TRADE from Morgan Stanley, 2024)</span>
+                </div>
+
+                <div class="process-arrow">➔</div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Mapping to Strategy</h3>
+                    <p>The system assigns a score (1–10) and selects <strong>Conservative (1–3)</strong>, <strong>Moderate (4–7)</strong>, or <strong>Aggressive (8–10)</strong>.</p>
+                    <span class="source">(TD Wealth Investing, n.d.)</span>
+                </div>
+
+                <div class="process-arrow">➔</div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Portfolio Construction</h3>
+                    <p>Specific Exchange-Traded Funds (ETFs) are chosen to match the target asset allocation.</p>
+                    <span class="source">(Investopedia, 2023b)</span>
+                </div>
+
+                <div class="process-arrow">➔</div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Automatic Rebalancing</h3>
+                    <p>The system periodically adjusts the portfolio back to its original target to maintain risk levels.</p>
+                    <span class="source">(Betterment, 2024)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <button onclick="topFunction()" id="backToTop" title="Go to top">
+        Top
+    </button>
+    <script src="script.js"></script>
 
     <footer>
         <div class="footer-content">
             <div class="footer-text">
                 <p>CS1102 - Course Project - 2025/2026 Semester B</p>
                 <p>This page prepared by: Mak Chun Kin</p>
+                <p>Website prepared by: Lau Tsz Lok</p>
             </div>
 
         <div class="footer-logo">
@@ -154,10 +238,6 @@
         </div>
         </div>
     </footer>
-
-
-
-
 
 </body>
 </html>    

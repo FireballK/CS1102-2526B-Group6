@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Risk Profiling Tool - Robo-Advisory</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="https://www.cityu.edu.hk/">
+                <img src="cityu_logo.png" alt="CityU Logo" style="height: 40px;"> 
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="about.html">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html#timeline">Timeline</a></li>
+                        <li><a href="about.html#example">Example</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="risktolerance.html">Risk Tolerance</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="tool.html">Risk Profiling Tool</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="simulator.html">Portfolio Simulator</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="discovery.html">Discovery</a></li>
+                    </ul>
+                </li>
+               <li><a href="references.html">References</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-container">
+        <h2 class="page-title">Risk Profiling Tool</h2>
+        <hr class="title-line">
+
+        <div id="quiz-section">
+            <div class="quiz-info-box">
+                <p>This quiz will evaluate your risk appetite and suggest a suitable investment strategy.</p>
+                <p>You may get a report and explanation after finish the quiz.</p>
+            </div>
+
+        <form id="risk-quiz">
+            <div class="question-block">
+                <span class="step-label">Question 1</span>
+                <p class="question-text">How long do you plan to keep your money invested?</p>
+                <div class="options-grid">
+                    <label class="option-card"><input type="radio" name="q1" value="1" required> <span>(A) 1–3 years</span></label>
+                    <label class="option-card"><input type="radio" name="q1" value="2"> <span>(B) 5–10 years</span></label>
+                    <label class="option-card"><input type="radio" name="q1" value="3"> <span>(C) 10+ years</span></label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <span class="step-label">Question 2</span>
+                <p class="question-text">What is the primary goal for this investment?</p>
+                <div class="options-grid">
+                    <label class="option-card"><input type="radio" name="q2" value="1"> <span>(A) Safety and stability</span></label>
+                    <label class="option-card"><input type="radio" name="q2" value="2"> <span>(B) Balanced growth</span></label>
+                    <label class="option-card"><input type="radio" name="q2" value="3"> <span>(C) Maximum long-term compounding</span></label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <span class="step-label">Question 3</span>
+                <p class="question-text">If your portfolio lost 15% in one month, what would you do?</p>
+                <div class="options-grid">
+                    <label class="option-card"><input type="radio" name="q3" value="1"> <span>(A) Sell immediately</span></label>
+                    <label class="option-card"><input type="radio" name="q3" value="2"> <span>(B) Hold and monitor</span></label>
+                    <label class="option-card"><input type="radio" name="q3" value="3"> <span>(C) Buy more</span></label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <span class="step-label">Question 4</span>
+                <p class="question-text">Which asset mix do you like the most?</p>
+                <div class="options-grid">
+                    <label class="option-card"><input type="radio" name="q4" value="1"> <span>(A) 70–80% Bonds</span></label>
+                    <label class="option-card"><input type="radio" name="q4" value="2"> <span>(B) 50% Stocks, 50% Bonds</span></label>
+                    <label class="option-card"><input type="radio" name="q4" value="3"> <span>(C) 80–100% Stocks</span></label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <span class="step-label">Question 5</span>
+                <p class="question-text">Are you prepared for a 30–50% loss during a bear market for higher rewards?</p>
+                <div class="options-grid">
+                    <label class="option-card"><input type="radio" name="q5" value="1"> <span>(A) No, I don’t accept to lose</span></label>
+                    <label class="option-card"><input type="radio" name="q5" value="2"> <span>(B) I accept small drops</span></label>
+                    <label class="option-card"><input type="radio" name="q5" value="3"> <span>(C) Yes, I accept high risk</span></label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <span class="step-label">Question 6</span>
+                <p class="question-text">Which description best fits your current financial stage?</p>
+                <div class="options-grid">
+                    <label class="option-card"><input type="radio" name="q6" value="1"> <span>(A) Retired/Nearing retirement</span></label>
+                    <label class="option-card"><input type="radio" name="q6" value="2"> <span>(B) Mid-career professional</span></label>
+                    <label class="option-card"><input type="radio" name="q6" value="3"> <span>(C) Young investor</span></label>
+                </div>
+            </div>
+
+            <div class="btn-wrapper">
+                <button type="button" onclick="calculateResult()" class="submit-btn">Analyze My Risk Profile</button>
+            </div>
+        </form>    
+        </div>
+
+        <div id="result-section" style="display: none;">
+            <div class="result-card">
+                <div class="result-header">
+                    <h3>Your Profile: <span id="profile-name">xxx</span></h3>
+                </div>
+                <div class="result-body">
+                    <div class="chart-area">
+                        <div id="pie-chart" class="css-pie-chart"></div>
+                        <div id="chart-legend" class="chart-legend"></div>
+                    </div>
+                    <div class="explanation-area">
+                        <h4>Analysis Result:</h4>
+                        <p id="profile-desc">Based on your score, we recommend the strategy above.</p>
+                        <button onclick="resetQuiz()" class="reset-btn">Retake Quiz</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-card analysis-card">
+                <div class="result-header">
+                    <h3>Investment Philosophy & Analysis</h3>
+                </div>
+                <div class="analysis-grid">
+                    <div class="analysis-item">
+                        <h5>Time Horizon (Q1)</h5>
+                        <p>How long you plan to invest will affect how much risk you can take. If you have a longer time, you can afford to wait for the market to recover if it goes down. <span class="cite">(Fisher & Statman, 1997)</span></p>
+                    </div>
+                    <div class="analysis-item">
+                        <h5>Goal Setting (Q2)</h5>
+                        <p>Your investment plan should be based on your specific life goals, like buying a house or retirement, instead of just looking at general market risks. <span class="cite">(Brunel, 2003)</span></p>
+                    </div>
+                    <div class="analysis-item">
+                        <h5>Loss Aversion (Q3)</h5>
+                        <p>Most people feel the pain of losing money much more than the joy of making it. This often makes investors panic and sell at the wrong time. <span class="cite">(Kahneman & Tversky, 1979)</span></p>
+                    </div>
+                    <div class="analysis-item">
+                        <h5>Asset Allocation (Q4)</h5>
+                        <p>The strategic selection between risky and risk-free assets is the primary driver of portfolio performance. <span class="cite">(Brinson et al., 1986)</span></p>
+                    </div>
+                    <div class="analysis-item">
+                        <h5>Risk Capacity (Q5)</h5>
+                        <p>Risk capacity is defined by the objective ability to sustain a loss without compromising a standard of living. <span class="cite">(Grable, 2000)</span></p>
+                    </div>
+                    <div class="analysis-item">
+                        <h5>Life Stage (Q6)</h5>
+                        <p>As you get older, your investment style should change. Younger people can usually take more risks, while those closer to retirement should focus on stability. <span class="cite">(Bodie et al., 1992)</span></p>
+                    </div>
+                </div>
+            </div>
+        </div><div id="result-section" style="display: none;">
+            <div class="result-card">
+                <div class="result-header">
+                    <h3>Your Profile: <span id="profile-name">xxx</span></h3>
+                </div>
+                <div class="result-body">
+                    <div class="chart-area">
+                        <div id="pie-chart" class="css-pie-chart"></div>
+                        <div id="chart-legend" class="chart-legend"></div>
+                    </div>
+                    <div class="explanation-area">
+                        <h4>Analysis Result:</h4>
+                        <p id="profile-desc">Based on your score, we recommend the strategy above.</p>
+                        <button onclick="resetQuiz()" class="reset-btn">Retake Quiz</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-card analysis-card">
+                <div class="result-header">
+                    <h3>Investment Philosophy & Analysis</h3>
+                </div>
+                <div class="analysis-grid">
+                    <div class="analysis-item">
+                        <h5>Time Horizon (Q1)</h5>
+                        <p>How long you plan to invest will affect how much risk you can take. If you have a longer time, you can afford to wait for the market to recover if it goes down. <span class="cite">(Fisher & Statman, 1997)</span></p>
+                    </div>
+                    <div class="analysis-item">
+                        <h5>Goal Setting (Q2)</h5>
+                        <p>Your investment plan should be based on your specific life goals, like buying a house or retirement, instead of just looking at general market risks. <span class="cite">(Brunel, 2003)</span></p>
+                    </div>
+                    <div class="analysis-item">
+                        <h5>Loss Aversion (Q3)</h5>
+                        <p>Most people feel the pain of losing money much more than the joy of making it. This often makes investors panic and sell at the wrong time. <span class="cite">(Kahneman & Tversky, 1979)</span></p>
+                    </div>
+                    <div class="analysis-item">
+                        <h5>Asset Allocation (Q4)</h5>
+                        <p>The strategic selection between risky and risk-free assets is the primary driver of portfolio performance <span class="cite">(Brinson et al., 1986)</span></p>
+                    </div>
+                    <div class="analysis-item">
+                        <h5>Risk Capacity (Q5)</h5>
+                        <p>Risk capacity is defined by the objective ability to sustain a loss without compromising a standard of living <span class="cite">(Grable, 2000)</span></p>
+                    </div>
+                    <div class="analysis-item">
+                        <h5>Life Stage (Q6)</h5>
+                        <p>As you get older, your investment style should change. Younger people can usually take more risks, while those closer to retirement should focus on stability. <span class="cite">(Bodie et al., 1992)</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button onclick="topFunction()" id="backToTop" title="Go to top">
+        Top
+    </button>
+    <script src="script.js"></script>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-text">
+                <p>CS1102 - Course Project - 2025/2026 Semester B</p>
+                <p>This page prepared by: Lau Tsz Lok</p>
+                <p>Website prepared by: Lau Tsz Lok</p>
+            </div>
+
+        <div class="footer-logo">
+            <a href="https://www.cs.cityu.edu.hk/" target="_blank">
+                <img src="cs_logo.png" alt="CityU CS Logo">
+            </a>
+        </div>
+        </div>
+    </footer>
+
+</body>
+</html>

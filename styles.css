@@ -3,6 +3,9 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Header */
@@ -118,6 +121,7 @@ header {
     max-width: 1100px;
     margin: 40px auto;
     padding: 0 20px;
+    flex: 1;
 }
 
 .page-title {
@@ -165,6 +169,122 @@ header {
     }
 }
 
+/* 策略詳情主容器 */
+.strategy-details-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 40px;
+    margin-bottom: 50px; /* 留一點空間給 Footer */
+}
+
+/* 大型卡片基礎樣式 */
+.strategy-card-large {
+    background: #fff;
+    border-radius: 2px; /* 稍微方正一點，像紙張 */
+    margin-bottom: 40px;
+    box-shadow: 5px 5px 0px #e0e0e0; /* 硬陰影，更有設計感 */
+    border: 1px solid #ddd;
+    position: relative;
+    overflow: visible;
+}
+
+/* 三種策略的專屬顏色 */
+.conservative .card-header { background-color: #e8f5e9; color: #2e7d32; border-bottom: 2px solid #2e7d32; }
+.moderate .card-header { background-color: #fff3e0; color: #ef6c00; border-bottom: 2px solid #ef6c00; }
+.aggressive .card-header { background-color: #ffebee; color: #c62828; border-bottom: 2px solid #c62828; }
+
+/* 卡片標題區 */
+.card-header {
+    background: #f8f9fa;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.card-header .icon {
+    font-size: 1.6rem;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #333;
+}
+
+/* 卡片內容區 */
+.card-body {
+    padding: 25px;
+}
+
+.target-audience {
+    font-size: 1.05rem;
+    color: #444;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.card-body h4 {
+    margin: 20px 0 10px 0;
+    font-size: 1.1rem;
+    color: #2c3e50;
+}
+
+/* 列表樣式優化 */
+.card-body ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card-body li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.6;
+    color: #555;
+}
+
+.card-body li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #666;
+    font-weight: bold;
+}
+
+.strategy-card-large::after {
+    content: "STRATEGY";
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: #333;
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 8px;
+    letter-spacing: 1px;
+}
+
+/* Reference 引用樣式 */
+.ref {
+    font-size: 0.8rem;
+    color: #999;
+    font-style: italic;
+    margin-left: 5px;
+}
+
+/* 底部例子藍色方框 */
+.example-box {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f0f7ff;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #34495e;
+    border-left: 3px solid #3498db;
+}
+
 .strategies-container {
     padding-top: 60px; 
     margin-top: 20px;
@@ -196,24 +316,343 @@ header {
     background-color: #f2f2f2;
 }
 
-.strategy-details {
+.process-section {
+    padding: 60px 0;
+    background-color: transparent;
+}
+
+/* 刪除舊的 .strategy-card 相關樣式，改用以下 */
+
+.strategy-details-container {
     display: flex;
-    gap: auto;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 40px;
+    margin: 50px auto;
 }
 
-.strategy-card {
-    flex: 1;
-    min-width: 280px;
-    padding: 20px;
+.strategy-feature-block {
     background: #fff;
-    border-top: 4px solid #333; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 2px solid #333;
+    padding: 35px;
+    position: relative;
+    box-shadow: 6px 6px 0px #333; /* 實心硬陰影，打破 AI 模板感 */
+    width: 90%;
 }
 
-.strategy-card h3 {
+/* 讓中間的卡片向右偏，製造人手排版的視覺變化 */
+.strategy-feature-block.highlighted {
+    align-self: flex-end;
+    background-color: #fffef9;
+    box-shadow: -8px 8px 0px #f39c12;
+}
+
+.strategy-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 2px dashed #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.strategy-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 左右分欄，閱讀更輕鬆 */
+    gap: 30px;
+}
+
+.feature-tag {
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    background: #333;
+    color: #fff;
+    padding: 2px 12px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.ref-source, .ref-inline {
+    font-size: 0.8rem;
+    color: #999;
+    font-style: italic;
+}
+
+/* 特色小部件 */
+.example-tag, .allocation-badge, .warning-box {
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 0.9rem;
+    border-radius: 4px;
+}
+
+.example-tag { background: #f0f7ff; color: #0056b3; border-left: 4px solid #0056b3; }
+.allocation-badge { background: #fff3e0; color: #e65100; border-left: 4px solid #e65100; }
+.warning-box { background: #ffebee; color: #c62828; border-left: 4px solid #c62828; }
+
+/* 手機版自動變回單欄 */
+@media (max-width: 768px) {
+    .strategy-content { grid-template-columns: 1fr; }
+    .strategy-feature-block { width: 100%; }
+}
+
+.conservative { border-left: 10px solid #2e7d32; }
+.moderate { border-left: 10px solid #f39c12; }
+.aggressive { border-left: 10px solid #c0392b; }
+
+.process-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 30px;
+    flex-wrap: nowrap;
+}
+
+.process-step {
+    flex: 1;
+    min-width: 180px;
+    text-align: center;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    border-top: 4px solid #333;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 15px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.process-step h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.process-step p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+.source {
+    display: block;
+    font-size: 0.75rem;
+    color: #999;
+    margin-top: 10px;
+}
+
+.process-arrow {
+    align-self: center;
+    font-size: 1.5rem;
+    color: #999;
+    padding-bottom: 30px; 
+    flex-shrink: 0;      
+}
+
+@media (max-width: 1024px) {
+    .process-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .process-arrow {
+        transform: rotate(90deg); 
+        padding: 10px 0;
+    }
+    .process-step {
+        width: 90%;
+        max-width: 400px;
+    }
+}
+
+/* Quiz  */
+.quiz-info-box {
+    background: #f0f7ff;
+    padding: 20px;
+    border-left: 5px solid #333;
+    margin-bottom: 30px;
+}
+
+.question-block {
+    background: #fff;
+    border: 2px solid #333;
+    padding: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    box-shadow: 6px 6px 0px #e0e0e0; /* 硬陰影 */
+}
+
+.step-label {
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    background: #333;
+    color: #fff;
+    padding: 2px 10px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.option-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.2s;
+}
+
+.option-card:hover {
+    background: #f9f9f9;
+    border-color: #333;
+}
+
+.btn-wrapper {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.submit-btn {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #999;
+}
+
+/* 結果頁面樣式 */
+.result-card {
+    background: #fff;
+    border: 3px solid #333;
+    padding: 40px;
+}
+
+.result-body {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#pie-chart-mock {
+    width: 250px;
+    height: 250px;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px dashed #999;
+}
+
+.css-pie-chart {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    box-shadow: 4px 4px 0px #333;
+    margin: 0 auto;
+}
+
+.chart-legend {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+
+.chart-legend div {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.chart-legend span {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin-right: 10px;
+    border: 1px solid #333;
+}
+
+/* 詳細解釋區域容器 */
+.detailed-breakdown {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px dashed #333; /* 用虛線與上方結果區隔 */
+    text-align: left;
+}
+
+.detailed-breakdown h4 {
+    margin-bottom: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 讓兩個 card 之間有距離 */
+.analysis-card {
+    margin-top: 30px;
+}
+
+.analysis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 兩欄排版 */
+    gap: 20px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.analysis-item {
+    background: #f9f9f9;
+    padding: 20px;
+    border-left: 5px solid #333; /* 黑色粗邊條增加專業感 */
+    border-radius: 4px;
+}
+
+.analysis-item h5 {
     margin-top: 0;
     color: #2c3e50;
+    font-size: 1.1rem;
+}
+
+.cite {
+    display: block;
+    margin-top: 10px;
+    font-style: italic;
+    color: #888;
+    font-size: 0.8rem;
+}
+
+/* 手機版自動變回一欄 */
+@media (max-width: 768px) {
+    .analysis-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Footer Section */
@@ -226,7 +665,8 @@ footer {
 .footer-content {
     display: flex;
     justify-content: space-between; 
-    align-items: flex-end;         
+    align-items: flex-end;  
+    width: auto;       
 }
 
 .footer-text p {
@@ -244,3 +684,26 @@ footer {
 .footer-logo img:hover {
     opacity: 0.8;
 }
+
+/* Back to Top */
+#backToTop {
+    display: none;        
+    position: fixed;     
+    bottom: 20px;       
+    right: 30px;         
+    z-index: 99;         
+    border: none;
+    outline: none;
+    background-color: #gray; 
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px; 
+    font-size: 18px;
+    transition: 0.3s;    
+}
+
+#backToTop:hover {
+    background-color: #gray; 
+}
+
