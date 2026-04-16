@@ -65,19 +65,23 @@ function calculateResult() {
     let profile = "";
     let level = "";
     let description = "";
+    let scoreRange = "";
 
     // 根據你的分數機制判斷
     if (totalScore >= 6 && totalScore <= 9) {
         profile = "Conservative Strategy";
         level = "Risk Level: 1-3";
+        scoreRange = "6-9 marks";
         description = "Your priority is capital preservation. You prefer stability and are less comfortable with market fluctuations. A portfolio with a high allocation of bonds and cash equivalents is recommended.";
     } else if (totalScore >= 10 && totalScore <= 14) {
         profile = "Moderate Strategy";
         level = "Risk Level: 4-7";
+        scoreRange = "10-14 marks";
         description = "You seek a balance between growth and safety. You can tolerate some market volatility in exchange for moderate long-term returns. A 50/50 mix of stocks and bonds is often suitable.";
     } else if (totalScore >= 15 && totalScore <= 18) {
         profile = "Aggressive Strategy";
         level = "Risk Level: 8-10";
+        scoreRange = "15-18 marks";
         description = "You are focused on maximum long-term wealth accumulation. You have a high risk tolerance and can withstand significant market drops (30-50%) for the potential of higher rewards.";
     }
 
@@ -86,7 +90,7 @@ function calculateResult() {
     document.getElementById('result-section').style.display = 'block';
 
     // 填入結果文字
-    document.getElementById('profile-name').innerHTML = `${profile} <br><small style="color: #666; font-size: 0.9rem;">(${level})</small>`;
+    document.getElementById('profile-name').innerHTML = `${profile} <br><small style="color: #666; font-size: 0.9rem;">Yout total marks: ${totalScore} marks.`;
     document.getElementById('profile-desc').innerText = description;
     
     // 捲動到頂部方便看結果

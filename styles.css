@@ -614,6 +614,50 @@ header {
     letter-spacing: 1px;
 }
 
+.scoring-guide {
+    background: #f0f7ff; /* 淺藍色背景 */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border: 1px solid #d0e3f5;
+    text-align: center;
+}
+
+.scoring-guide h4 {
+    margin-top: 0;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.scoring-guide p {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.score-ranges {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.score-ranges span {
+    background: #fff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}
+
+/* 手機版排版 */
+@media (max-width: 600px) {
+    .score-ranges {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 /* 讓兩個 card 之間有距離 */
 .analysis-card {
     margin-top: 30px;
