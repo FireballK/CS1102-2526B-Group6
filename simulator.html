@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio Simulator - Robo-Advisory</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+    <div class="logo">
+        <a href="https://www.cityu.edu.hk/">
+            <img src="cityu_logo.png" alt="CityU Logo" style="height: 40px;"> 
+        </a>
+    </div>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="about.html">About</a>
+                <ul class="dropdown-menu">
+                    <li><a href="about.html#timeline">Timeline</a></li>
+                    <li><a href="about.html#example">Example</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="risktolerance.html">Risk Tolerance</a>
+                <ul class="dropdown-menu">
+                    <li><a href="tool.html">Risk Profiling Tool</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="simulator.html">Portfolio Simulator</a>
+                <ul class="dropdown-menu">
+                    <li><a href="discovery.html">Discovery</a></li>
+                </ul>
+            </li>
+           <li><a href="references.html">References</a></li> 
+        </ul>
+    </nav>
+
+    </header>
+
+    <div class="sim-container">
+        <h2>Portfolio Future Value Simulator</h2>
+        <p>Estimate how your investment will grow over time.</p>
+        
+        <label>Investment Amount (HKD):</label><br>
+        <input type="number" id="amount" placeholder="e.g. 10000"><br><br>
+        
+        <label>Investment Period (Years):</label><br>
+        <input type="number" id="years" placeholder="e.g. 10"><br><br>
+        
+        <label>Select Strategy:</label><br>
+        <select id="strategy">
+            <option value="0.03">Conservative (3% Annual Return)</option>
+            <option value="0.06">Moderate (6% Annual Return)</option>
+            <option value="0.10">Aggressive (10% Annual Return)</option>
+        </select><br><br>
+        
+        <button onclick="runSimulation()">Calculate</button>
+        
+        <div id="sim-result" style="margin-top: 20px; font-weight: bold;">
+            </div>
+    </div>
+
+    <button onclick="topFunction()" id="backToTop" title="Go to top">
+        Top
+    </button>
+    <script src="script.js"></script>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-text">
+                <p>CS1102 - Course Project - 2025/2026 Semester B</p>
+                <p>This page prepared by: Lau Tsz Lok</p>
+                <p>Website prepared by: Lau Tsz Lok</p>
+            </div>
+
+        <div class="footer-logo">
+            <a href="https://www.cs.cityu.edu.hk/" target="_blank">
+                <img src="cs_logo.png" alt="CityU CS Logo">
+            </a>
+        </div>
+        </div>
+    </footer>
+
+</body>
+</html>    
