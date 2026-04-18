@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Discovery - Robo-Advisory</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+    <div class="logo">
+        <a href="https://www.cityu.edu.hk/">
+            <img src="cityu_logo.png" alt="CityU Logo" style="height: 40px;"> 
+        </a>
+    </div>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="about.html">About</a>
+                <ul class="dropdown-menu">
+                    <li><a href="timeline.html">Timeline</a></li>
+                    <li><a href="example.html">Example</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="risktolerance.html">Risk Tolerance</a>
+                <ul class="dropdown-menu">
+                    <li><a href="tool.html">Risk Profiling Tool</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="simulator.html">Portfolio Simulator</a>
+                <ul class="dropdown-menu">
+                    <li><a href="discovery.html">Discovery</a></li>
+                </ul>
+            </li>
+           <li><a href="references.html">References</a></li> 
+        </ul>
+    </nav>
+
+    </header>
+
+    <div class="analysis-report-container">
+        <h1 class="page-title">Quantitative Strategy Discovery</h1>
+        <hr class="title-line">
+
+        <div class="report-card">
+            <div class="report-header conservative">
+                <h3>Case Study 1: Capital Preservation for HOS Premium Payment</h3>
+            </div>
+            <div class="report-body">
+                <div class="report-text">
+                    <p><strong>Investor Profile:</strong> Mr. Chan, a <strong>60-year-old</strong> nearing retirement, has just received a lump sum from his MPF. He plans to use HK$500,000 to pay for the premium of a Home Ownership Scheme (HOS) flat in <strong>3 years</strong>.</p>
+                    <p><strong>Strategy:</strong> Conservative (80% Fixed-Income / 20% Equity).</p>
+                    <div class="insight-tag">
+                        <strong>Analytical Finding:</strong> Mr. Chan already 60 years old, and he has to use this capital to pay for the flat in 3 years, which mean he cannot accept a high risk investment. The simulation calculate HK$546,363.5. For short-term liabilities in HK's inflationary environment, low-volatility debt instruments brings lower risk, ensuring the liquidity remains intact for the HOS transaction.
+                    </div>
+                </div>
+                <div class="report-img">
+                    <img src="case1.png" alt="Conservative Simulation Result">
+                </div>
+            </div>
+        </div>
+
+        <div class="report-card">
+            <div class="report-header moderate">
+                <h3>Case Study 2: Real Growth for Middle-Class Housing Down Payment</h3>
+            </div>
+            <div class="report-body">
+                <div class="report-text">
+                    <p><strong>Investor Profile:</strong> Ms. Wong is a 28 years old healthcare professional with <strong>HK$200,000</strong> in initial capital, aiming to accumulate a residential down payment over a <strong>7-year</strong> horizon.</p>
+                    <p><strong>Strategy:</strong> Moderate (50% Equity / 50% Fixed-Income).</p>
+                    <div class="insight-tag">
+                        <strong>Analytical Finding:</strong> Ms. Wong is a salaried worker who has enough risk tolerance. Her portfolio has reached HK$300,726.05. This "Balanced" strategy provides a necessary risk premium above the Composite Consumer Price Index (CCPI), which is essential in Hong Kong where housing inflation often outpaces general CPI growth.
+                    </div>
+                    <span class="cite-academic">Reference: <em>Census and Statistics Department, HKSAR (2024)</em>. Historical analysis of Hong Kong CCPI and residential property price indices.</span>
+                </div>
+                <div class="report-img">
+                    <img src="case2.png" alt="Moderate Simulation Result">
+                </div>
+            </div>
+        </div>
+
+        <div class="report-card">
+            <div class="report-header aggressive">
+                <h3>Case Study 3: Life-Cycle Investing for Fresh Graduates</h3>
+            </div>
+            <div class="report-body">
+                <div class="report-text">
+                    <p><strong>Investor Profile:</strong> A <strong>22-year-old CityU graduate</strong> investing a <strong>HK$20,000</strong> into a retirement-focused portfolio with a <strong>35-year</strong> time horizon.</p>
+                    <p><strong>Strategy:</strong> Aggressive (90% Equity / 10% Fixed-Income).</p>
+                    <div class="insight-tag">
+                        <strong>Analytical Finding:</strong> The student is a fresh university graduate. He has enough risk tolerance because he is young. This investment plan is low risk, and his invest amount is small. The terminal value exceeds HK$560,000. This proves that for young Hong Kong investors, Shortfall risk is much more harmful than market ups and downs. Therefore, young people should use a high-equity strategy early in their careers.
+                    </div>
+                    <span class="cite-academic">Reference: <em>Bodie, Z., Merton, R. C., & Samuelson, W. F. (1992)</em>. Labor supply flexibility and portfolio choice in a life cycle model.</span>
+                </div>
+                <div class="report-img">
+                    <img src="case3.png" alt="Aggressive Simulation Result">
+                </div>
+            </div>
+        </div>
+
+        <div class="future-work-box">
+            <h3>Technical Reflection & Future Enhancements</h3>
+            <p>While this simulation provides a baseline for financial planning, future iterations will address several computational limitations:</p>
+            <ul>
+                <li><strong>Dynamic Asset Allocation:</strong> Implementing a "Glide Path" algorithm that automatically de-risks the portfolio as the target date approaches (Target-Date Fund logic).</li>
+                <li><strong>Stochastic Modeling:</strong> Utilizing <em>Monte Carlo Methods</em> to simulate 10,000+ market paths to provide a probability distribution of outcomes rather than a deterministic linear return.</li>
+                <li><strong>Friction Cost Integration:</strong> Accounting for HK-specific transaction costs (Stamp Duty, brokerage fees) and the Management Expense Ratio (MER) of local ETFs.</li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <button onclick="topFunction()" id="backToTop" title="Go to top">
+        Top
+    </button>
+    <script src="script.js"></script>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-text">
+                <p>CS1102 - Course Project - 2025/2026 Semester B</p>
+                <p>This page prepared by: Lau Tsz Lok</p>
+                <p>Website prepared by: Lau Tsz Lok</p>
+            </div>
+
+        <div class="footer-logo">
+            <a href="https://www.cs.cityu.edu.hk/" target="_blank">
+                <img src="cs_logo.png" alt="CityU CS Logo">
+            </a>
+        </div>
+        </div>
+    </footer>
+
+</body>
+</html>    
