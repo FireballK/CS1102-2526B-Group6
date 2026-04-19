@@ -87,7 +87,6 @@ header {
 /* Content Section */
 .main-content {
     text-align: center;
-    /*padding: 40px 20px;   */ 
 }     
 
 .info-block {
@@ -221,24 +220,20 @@ footer {
     background-color: #gray; 
 }
 
-
-
-
-/* 策略詳情主容器 */
+/* Strategy */
 .strategy-details-container {
     display: flex;
     flex-direction: column;
     gap: 30px;
     margin-top: 40px;
-    margin-bottom: 50px; /* 留一點空間給 Footer */
+    margin-bottom: 50px;
 }
 
-/* 大型卡片基礎樣式 */
 .strategy-card-large {
     background: #fff;
-    border-radius: 2px; /* 稍微方正一點，像紙張 */
+    border-radius: 2px;
     margin-bottom: 40px;
-    box-shadow: 5px 5px 0px #e0e0e0; /* 硬陰影，更有設計感 */
+    box-shadow: 5px 5px 0px #e0e0e0;
     border: 1px solid #ddd;
     position: relative;
     overflow: visible;
@@ -386,7 +381,6 @@ footer {
     width: 90%;
 }
 
-/* 讓中間的卡片向右偏，製造人手排版的視覺變化 */
 .strategy-feature-block.highlighted {
     align-self: flex-end;
     background-color: #fffef9;
@@ -415,7 +409,7 @@ footer {
     background: #333;
     color: #fff;
     padding: 2px 12px;
-    font-size: 10px;
+    font-size: 0.8rem;
     font-weight: bold;
 }
 
@@ -536,7 +530,7 @@ footer {
     padding: 30px;
     margin-bottom: 30px;
     position: relative;
-    box-shadow: 6px 6px 0px #e0e0e0; /* 硬陰影 */
+    box-shadow: 6px 6px 0px #e0e0e0;
 }
 
 .step-label {
@@ -587,7 +581,7 @@ footer {
     box-shadow: 4px 4px 0px #999;
 }
 
-/* 結果頁面樣式 */
+/* Quiz Result */
 .result-card {
     background: #fff;
     border: 3px solid #333;
@@ -740,7 +734,7 @@ footer {
     }
 }
 
-/* Simulator Section - 只影響 sim-container 入面嘅嘢 */
+/* Simulator*/
 .sim-container {
     padding: 30px;
     max-width: auto;
@@ -754,20 +748,18 @@ footer {
     border: 1px solid #eee;
 }
 
-/* 鎖定只改 simulator 入面嘅 input同 select */
 .sim-container input, 
 .sim-container select {
     padding: 12px;
     width: 100%;
     margin-top: 5px;
-    margin-bottom: 15px; /* 加返啲間距 */
+    margin-bottom: 15px;
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 4px;
     height: 40px;
 }
 
-/* 鎖定只改 simulator 入面個掣 */
 .sim-container button {
     padding: 12px;
     background-color: #2c3e50;
@@ -775,7 +767,7 @@ footer {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    width: 100%; /* 整長少少好睇啲 */
+    width: 100%;
 }
 
 .sim-container button:hover {
@@ -787,7 +779,7 @@ footer {
     color: #2c3e50;
 }
 
-/* --- Discovery/Analysis Report Styles --- */
+/*Discovery*/
 .analysis-report-container {
     max-width: 1050px;
     margin: 40px auto;
@@ -862,7 +854,7 @@ footer {
     .report-img { width: 100%; }
 }
 
-/* --- About Page Specifics --- */
+/*About*/
 .academic-definition {
     font-size: 1.1rem;
     line-height: 1.8;
@@ -920,7 +912,7 @@ footer {
 }
 
 
-/* --- Timeline Section Styling --- */
+/*Timeline Section Styling*/
 .timeline-section {
     padding: 60px 20px;
     background-color: #ffffff;
@@ -938,7 +930,7 @@ footer {
     max-width: 800px;
     margin: 0 auto;
     padding-left: 40px;
-    border-left: 2px solid #2c3e50; /* 主時間軸線 */
+    border-left: 2px solid #2c3e50; 
 }
 
 .timeline-item {
@@ -948,7 +940,7 @@ footer {
 
 .timeline-dot {
     position: absolute;
-    left: -49px; /* 正好壓在左邊界線上 */
+    left: -49px;
     top: 5px;
     width: 16px;
     height: 16px;
@@ -958,7 +950,7 @@ footer {
 }
 
 .timeline-content {
-    background: #f8f9fa; /* 輕微底色區分 */
+    background: #f8f9fa;
     padding: 20px;
     border-bottom: 1px solid #ddd;
 }
@@ -984,14 +976,35 @@ footer {
     font-size: 0.95rem;
 }
 
-/* 響應式調整 */
 @media (max-width: 600px) {
     .timeline-wrapper {
         margin-left: 20px;
     }
 }
 
-/* Reference Page Styling */
+/*Example*/
+.strategy-feature-block {
+    background: #fff;
+    border: 2px solid #333;
+    padding: 35px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.strategy-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .strategy-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Reference */
 .reference-list {
     margin-top: 30px;
     line-height: 1.6;
