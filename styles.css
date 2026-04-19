@@ -873,13 +873,6 @@ footer {
     margin: auto;
 }
 
-.process-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    margin-bottom: 50px;
-}
-
 .process-node {
     flex: 1;
     border: 1px solid #ddd;
@@ -998,3 +991,21 @@ footer {
     }
 }
 
+/* Reference Page Styling */
+.reference-list {
+    margin-top: 30px;
+    line-height: 1.6;
+}
+
+.ref-entry {
+    padding-left: 36px;   
+    text-indent: -36px;     
+    margin-bottom: 15px;    
+    font-size: 0.95rem;
+    color: #333;
+    word-wrap: break-word;  
+}
+
+.ref-entry em {
+    font-style: italic;    
+}
