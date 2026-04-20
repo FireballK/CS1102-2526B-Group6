@@ -62,17 +62,17 @@ function calculateResult() {
         profile = "Conservative Strategy";
         level = "Risk Level: 1-3";
         scoreRange = "6-9 marks";
-        description = "Your priority is capital preservation. You prefer stability and are less comfortable with market fluctuations. A portfolio with a high allocation of bonds and cash equivalents is recommended.";
+        description = "Your main goal is going to protect your money. You don’t like market ups and downs. We recommend putting most of your money in bonds and cash.";
     } else if (totalScore >= 10 && totalScore <= 14) {
         profile = "Moderate Strategy";
         level = "Risk Level: 4-7";
         scoreRange = "10-14 marks";
-        description = "You seek a balance between growth and safety. You can tolerate some market volatility in exchange for moderate long-term returns. A 50/50 mix of stocks and bonds is often suitable.";
+        description = "You want both growth and safety. You can handle some changes in the market for moderate long-term returns. A 50/50 mix of stocks and bonds is most suitable.";
     } else if (totalScore >= 15 && totalScore <= 18) {
         profile = "Aggressive Strategy";
         level = "Risk Level: 8-10";
         scoreRange = "15-18 marks";
-        description = "You are focused on maximum long-term wealth accumulation. You have a high risk tolerance and can withstand significant market drops (30-50%) for the potential of higher rewards.";
+        description = "You focus on making as much money as possible in long run. You are okay with big market drops of 30-50% for the chance of higher rewards.";
     }
 
     document.getElementById('quiz-section').style.display = 'none';
